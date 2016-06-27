@@ -1,0 +1,4 @@
+services:
+#    bookmark.example:
+#        class: BookmarkBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

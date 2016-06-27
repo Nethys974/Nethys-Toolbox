@@ -1,0 +1,3 @@
+bookmark_homepage:
+    path:     /
+    defaults: { _controller: BookmarkBundle:Default:index }
