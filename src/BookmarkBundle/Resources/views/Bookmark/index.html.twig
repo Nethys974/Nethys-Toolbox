@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block page_title %}Liste des favoris{% endblock %}
+
+{% block page_content %}
+    <table class="table table-bordered">
+        <tr>
+            <th>Titre</th>
+            <th>Url</th>
+            <th>Note</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for bookmark in bookmarks %}
+            <tr>
+                <td>{{bookmark.title}}</td>
+                <td>{{bookmark.url}}</td>
+                <td>{{bookmark.mark}}/5</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-success" href='{{path('bookmark_show', {'id': bookmark.id})}}'>Détail</a>
+                        <a class="btn btn-primary" href='{{path('bookmark_edit', {'id': bookmark.id})}}'>Editer</a>
+                        <a class="btn btn-danger" href='{{path('bookmark_delete', {'id': bookmark.id})}}'>Supprimer</a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <hr />
+    <a href="{{path('bookmark_add')}}">Add</a>
+{% endblock %}

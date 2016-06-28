@@ -10,6 +10,7 @@
         {% block stylesheets %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </head>
+    
     <body>
         <div class="container-fluid">
             <div class="row">
@@ -25,34 +26,19 @@
             </div>
             
             <div class="row">
-                <div class="col-xs-2">
-                    <div class="inner_cell">
+                <div class="col-sm-3">
+                    <!--<div class="inner_cell">-->
                         Side-menus
                         {{ include('::core_sidemenu.html.twig') }}
-                    </div>
+                    <!--</div>-->
                 </div>
-                <div class="col-xs-10">
-                    <div class="col-xs-12 inner_cell">
-                        {% block body %}{% endblock %}
-                    </div>
                     
-                    <div class="col-xs-12 inner_cell">
-                        Article
-                    </div>
-                    
-                    <div class="col-xs-12 inner_cell">
-                        <div class="col-xs-6">
-                            <div class="col-xs-12 inner_cell">
-                                Article Col A
-                            </div>
-                        </div>
-                        
-                        <div class="col-xs-6">
-                            <div class="col-xs-12 inner_cell">
-                                Article Col B
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-sm-9">
+                    <!--<div class="col-xs-12 inner_cell">-->
+                    {{ include('::core_messages.html.twig') }}<br />
+                    {% block page_title %}{% endblock %}  <br />  
+                    {% block page_content %}{% endblock %}
+                    <!--</div>-->
                 </div>
             </div>
             
@@ -62,28 +48,5 @@
                 </div>
             </div>
         </div>
-        
-        <style>
-            
-            .inner_cell {
-                border: 1px solid orange;
-                padding: 12px;
-                margin-bottom: 10px;
-            }
-            
-            .footer {
-                border: 1px solid orange;
-                margin: 6px;
-            }
-            
-            .menu {
-                border: 1px solid orange;
-                margin-bottom: 12px;
-            }
-            
-            .header {
-                border: 1px solid orange;
-            }
-        </style>
     </body>
 </html>
