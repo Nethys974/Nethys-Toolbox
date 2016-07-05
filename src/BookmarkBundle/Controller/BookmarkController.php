@@ -29,6 +29,8 @@ class BookmarkController extends Controller
         
         // Validation
         if ($form->isValid()) {
+            $bookmark->setCreatedBy($this->getUser());
+            
             // Persistance
             $em = $this->getDoctrine()->getManager();
             $em->persist($bookmark);
@@ -57,6 +59,8 @@ class BookmarkController extends Controller
         
         // Validation
         if ($form->isValid()) {
+            $bookmark->setUpdatedBy($this->getUser());
+            
             // Persistance
             $em = $this->getDoctrine()->getManager();
             $em->flush();
