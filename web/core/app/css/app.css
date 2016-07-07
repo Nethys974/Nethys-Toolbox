@@ -1,15 +1,29 @@
+@font-face {
+    font-family: Josefin;
+    src: url('../res/JosefinSans-Regular.ttf');
+}
+
+body {
+    background: url('../res/background.png') left top repeat;
+    font-family: Josefin;
+}
+
 .header {
-    border: 1px solid orange;
+    /*background-color: rgba(25, 25, 112, 1);*/
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-left: 250px;
+    
+    background: #4b6cb7;
+    background: linear-gradient(to top, #4b6cb7 , #182848);
 }
 
 .menu {
-    border: 1px solid orange;
-    margin-bottom: 12px;
-}
-
-.footer {
-    border: 1px solid orange;
-    margin: 6px;
+    margin-bottom: 24px;
+    
+    background-color: rgba(25, 25, 112, 0.3);
+    color: white;
 }
 
 .inner_cell {
@@ -18,3 +32,55 @@
     margin-bottom: 10px;
 }
 
+.page-sidebar, .page-content {
+    /*padding: 6px;*/
+    box-shadow: 2px 2px 3px gray;
+}
+
+
+.page-sidebar>div, .page-content>div {
+    /*padding: 12px;*/
+}
+
+.box-head {
+    background-color: rgba(25, 25, 112, 0.4);
+    border-bottom: 3px solid rgba(25, 25, 112, 1);
+    font-weight: bold;
+    font-size: 2em;
+    height: 40px;
+    padding: 2px 0px 0px 50px;
+}
+
+.box-body {
+    background-color: rgba(25, 25, 112, 0.1);
+    margin-bottom: 12px;
+    text-align: justify;
+    padding: 18px;
+}
+
+
+/* rgba(25, 25, 112, 1) */
+
+.footer {
+    position: fixed;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    
+    background-color: rgba(25, 25, 112, 0.8);
+    color: white;
+    
+    padding: 8px;
+}
+
+.app-button {
+    background-color: white;
+    margin-bottom: 14px;
+    padding-top: 4px; 
+    height: 40px;
+}
+
+.app-button:hover {
+    background-color: rgba(25, 25, 112, 0.2);
+}
