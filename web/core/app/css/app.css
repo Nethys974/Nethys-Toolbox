@@ -1,0 +1,115 @@
+@font-face {
+    font-family: Josefin;
+    src: url('../res/JosefinSans-Regular.ttf');
+}
+
+body {
+    background: url('../res/background.png') left top repeat;
+    font-family: Josefin;
+}
+
+.header {
+    /*background-color: rgba(25, 25, 112, 1);*/
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-left: 250px;
+    
+    background: #4b6cb7;
+    background: linear-gradient(to top, #4b6cb7 , #182848);
+}
+
+.menu {
+    margin-bottom: 24px;
+    
+    background-color: rgba(25, 25, 112, 0.3);
+    color: white;
+}
+
+.inner_cell {
+    border: 1px solid orange;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.page-sidebar, .page-content {
+    /*padding: 6px;*/
+    box-shadow: 2px 2px 3px gray;
+}
+
+
+.page-sidebar>div, .page-content>div {
+    /*padding: 12px;*/
+}
+
+.box-head {
+    background-color: rgba(25, 25, 112, 0.4);
+    border-bottom: 3px solid rgba(25, 25, 112, 1);
+    font-weight: bold;
+    font-size: 20px;
+    height: 40px;
+    padding: 10px 0px 0px 50px;
+}
+
+.box-body {
+    background-color: rgba(25, 25, 112, 0.1);
+    margin-bottom: 12px;
+    text-align: justify;
+    padding: 18px;
+}
+
+
+/* rgba(25, 25, 112, 1) */
+
+.footer {
+    position: fixed;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    
+    background-color: rgba(25, 25, 112, 0.8);
+    color: white;
+    
+    padding: 8px;
+}
+
+.app-button {
+    background-color: white;
+    margin-bottom: 14px;
+    height: 40px;
+}
+
+div .app-button:hover {
+    background-color: rgba(25, 25, 112, 0.2);
+    box-shadow: inset 0px 0px 5px 2px rgba(25,25,112,1);
+}
+
+.app-icon, .app-label {
+    float: left;
+    height: 32px;
+    margin-top: 4px;
+}
+
+.app-label {
+    padding-top: 3px;
+    padding-left: 8px;
+    font-size: 1.2em;
+    color: midnightblue;
+}
+
+.navbar-custom {
+    margin-top: 8px;
+    border: 2px solid midnightblue;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar a {
+    /*font-size: 18px;*/
+    font-weight: bold;
+    color: midnightblue !important;
+}

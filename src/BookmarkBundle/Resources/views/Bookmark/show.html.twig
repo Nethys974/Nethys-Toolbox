@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block page_title %}Détails du favori '{{entity.title}}'{% endblock %}
+
+{% block page_content %}
+    <table class="table table-striped table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>URL</th>
+                <td>{{ entity.url }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ entity.mark }}/5</td>
+            </tr>
+            <tr>
+                <th>Commentaires</th>
+                <td>{{ entity.note }}</td>
+            </tr>
+        </tbody>
+    </table>
+            
+    <hr />
+    <div class="form-group">
+        <div class="col-lg-offset-1 col-lg-11">
+            <a class="btn btn-default" href="{{ path('bookmark_homepage') }}" >Retour à la liste</a>
+            <a class="btn btn-primary" href='{{path('bookmark_edit', {'id': entity.id})}}'>Editer</a>
+            <a class="btn btn-danger" href='{{path('bookmark_delete', {'id': entity.id})}}'>Supprimer</a>
+        </div>
+    </div>
+                
+
+{% endblock %}

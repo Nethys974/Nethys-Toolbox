@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Nethys' Toolbox{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        {{ include('::core_ressources.html.twig') }}
+
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+            {{ include('::core_menu.html.twig') }}
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="page-sidebar">
+                        <div class="box-head">
+                            Applications
+                        </div>
+                        
+                        <div class="box-body">
+                            {{ include('::core_sidemenu.html.twig') }}
+                        </div>
+                    </div>
+                        
+                    <div class="page-sidebar">
+                        <div class="box-head">
+                            Applications
+                        </div>
+                        
+                        <div class="box-body">
+                            {{ include('::core_sidemenu.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+                    
+                        
+                <div class="col-sm-10">
+                    <div class="page-content">
+                        <div class="box-head">
+                            {% block page_title %}{% endblock %} 
+                        </div>
+                        
+                        <div class="box-body">
+                            {{ include('::core_messages.html.twig') }}<br />
+                            
+                            {% block page_content %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="footer">
+                    footer
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<div class="form-container img-rounded">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        <div class="form-group">
+            <div class="col-lg-8">
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.title) }}
+            </div>
+
+            <div class="col-lg-4">
+                {{ form_label(form.mark) }}
+                {{ form_widget(form.mark, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.mark) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-12">
+                {{ form_label(form.url) }}
+                {{ form_widget(form.url, {'attr': {'class': 'form-control', 'placeholder': 'http://'}}) }}
+                {{ form_errors(form.url) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-12">
+                {{ form_label(form.note) }}
+                {{ form_widget(form.note, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.note) }}
+            </div>
+        </div>
+
+        <hr />
+        <div class="form-group">
+            <div class="col-lg-offset-1 col-lg-11">
+                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-default'}}) }}
+                <a href="{{ path('bookmark_homepage') }}" class="btn btn-default">Retour à la liste</a>
+            </div>
+        </div>
+
+        {{ form_rest(form) }}
+    </form>
+</div>

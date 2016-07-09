@@ -1,0 +1,16 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /users
+
+bookmark:
+    resource: "@BookmarkBundle/Resources/config/routing.yml"
+    prefix:   /bookmarks
+
+main:
+    resource: "@MainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
