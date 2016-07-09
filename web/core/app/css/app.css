@@ -46,9 +46,9 @@ body {
     background-color: rgba(25, 25, 112, 0.4);
     border-bottom: 3px solid rgba(25, 25, 112, 1);
     font-weight: bold;
-    font-size: 2em;
+    font-size: 20px;
     height: 40px;
-    padding: 2px 0px 0px 50px;
+    padding: 10px 0px 0px 50px;
 }
 
 .box-body {
@@ -77,10 +77,39 @@ body {
 .app-button {
     background-color: white;
     margin-bottom: 14px;
-    padding-top: 4px; 
     height: 40px;
 }
 
-.app-button:hover {
+div .app-button:hover {
     background-color: rgba(25, 25, 112, 0.2);
+    box-shadow: inset 0px 0px 5px 2px rgba(25,25,112,1);
+}
+
+.app-icon, .app-label {
+    float: left;
+    height: 32px;
+    margin-top: 4px;
+}
+
+.app-label {
+    padding-top: 3px;
+    padding-left: 8px;
+    font-size: 1.2em;
+    color: midnightblue;
+}
+
+.navbar-custom {
+    margin-top: 8px;
+    border: 2px solid midnightblue;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar a {
+    /*font-size: 18px;*/
+    font-weight: bold;
+    color: midnightblue !important;
 }

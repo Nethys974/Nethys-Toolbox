@@ -13,20 +13,20 @@
     
     <body>
         <div class="container-fluid">
-            <div class="row">
-                <div class="header">
-                    Header
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="menu">
-                    {{ include('::core_menu.html.twig') }}
-                </div>
-            </div>
-            
+            {{ include('::core_menu.html.twig') }}
+
             <div class="row">
                 <div class="col-sm-2">
+                    <div class="page-sidebar">
+                        <div class="box-head">
+                            Applications
+                        </div>
+                        
+                        <div class="box-body">
+                            {{ include('::core_sidemenu.html.twig') }}
+                        </div>
+                    </div>
+                        
                     <div class="page-sidebar">
                         <div class="box-head">
                             Applications
