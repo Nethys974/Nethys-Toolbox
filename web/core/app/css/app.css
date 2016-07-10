@@ -113,3 +113,14 @@ div .app-button:hover {
     font-weight: bold;
     color: midnightblue !important;
 }
+
+.alert {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.alert ul {
+    padding-left: 15px;
+    list-style: none;
+}
