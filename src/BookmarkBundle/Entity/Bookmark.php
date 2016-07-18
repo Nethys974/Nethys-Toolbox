@@ -52,6 +52,13 @@ class Bookmark extends Timestamp
      * )
      */
     private $mark = 0;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=255, nullable=true)
+     */
+    private $category;
 
     /**
      * @var string
@@ -159,6 +166,29 @@ class Bookmark extends Timestamp
     public function getMark()
     {
         return $this->mark;
+    }
+    
+    /**
+     * Set category
+     *
+     * @param string $category
+     * @return Bookmark
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 
     /**

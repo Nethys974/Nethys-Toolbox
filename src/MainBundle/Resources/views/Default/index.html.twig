@@ -1,5 +1,50 @@
 {% extends "::base.html.twig" %}
 
-{% block body %}
-    Hello World Main!
+{% block page_title %}Home Page{% endblock %}
+
+{% block page_content %}
+    <div class="container">
+        <div class="col-xs-12 main-rb">
+            Some Rainbow Tiles/Blocs
+        </div>
+        
+        <div id="rainbow" class="col-xs-12"></div>
+    </div>
+
+    <style>
+        .rb-bloc {
+            float: left;
+            width: 120px;
+            height: 120px;
+            margin: 8px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .main-rb {
+            text-align: center;
+            font-weight: bold;
+            height: 35px;
+            border: 3px solid midnightblue;
+            border-radius: 8px;
+            font-size: 1.3em;
+            color: midnightblue;
+            margin-bottom: 24px;
+            background-color: lightsteelblue;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            var rainbow = $("#rainbow");
+            for(i=0; i<25; i++) {
+                r = Math.floor(Math.random() * 256);
+                v = Math.floor(Math.random() * 256);
+                b = Math.floor(Math.random() * 256);
+                
+                bloc = "<div class='rb-bloc' style='border: 2px solid rgba("+r+","+v+","+b+",0.9); background-color: rgba("+r+","+v+","+b+",0.3)'>Rouge: "+r+"</br>Vert: "+v+"</br>Bleu: "+b+"</div>";
+                rainbow.append(bloc);
+            }
+        });
+    </script>
 {% endblock %}

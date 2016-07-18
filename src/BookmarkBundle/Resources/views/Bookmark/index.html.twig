@@ -1,37 +1,87 @@
-{% extends "::base.html.twig" %}
+{% extends "BookmarkBundle::layout.html.twig" %}
 
 {% block page_title %}Liste des favoris{% endblock %}
 
-{% block page_content %}
-    <a class="btn btn-default btn-md" href="{{path('bookmark_add')}}">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        Ajouter un favori
-    </a>
-    <br />
+{% block page_assets %}
+    <script type="text/javascript" src="{{ asset('core/libs/jstree/jstree.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('core/libs/jstree/themes/default/style.css') }}" />
     
-    <div class="panel panel-default">
-        <table class="table table-condensed">
-            <tr class="info">
-                <th>Titre</th>
-                <th>Url</th>
-                <th>Note</th>
-                <th>Actions</th>
-            </tr>
+    <script type="text/javascript" src="{{ asset('bundles/bookmark/js/page-index.js') }}"></script>
+{% endblock %}
 
-            {% for bookmark in bookmarks %}
-                <tr>
-                    <td>{{bookmark.title}}</td>
-                    <td>{{bookmark.url}}</td>
-                    <td>{{bookmark.mark}}/5</td>
-                    <td>
-                        <div class="btn-group">
-                            <a class="btn btn-xs btn-success" href='{{path('bookmark_show', {'id': bookmark.id})}}'>Détail</a>
-                            <a class="btn btn-xs btn-primary" href='{{path('bookmark_edit', {'id': bookmark.id})}}'>Editer</a>
-                            <a class="btn btn-xs btn-danger" href='{{path('bookmark_delete', {'id': bookmark.id})}}'>Supprimer</a>
-                        </div>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
+{% block page_content %}
+    <div class="container-fluid">
+        <div class="col-lg-12">
+            <a class="btn btn-default btn-md margin-bottom" href="{{path('bookmark_add')}}">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Ajouter un favori
+            </a>
+        </div>
+        
+        <div class="col-lg-12">
+            <div class="col-lg-2 panel panel-default">
+                <span class="root-categories">Catégories</span>
+                <div id="category_tree">
+                    <ul>
+                        <li data-draggable="false">Root node 1
+                            <ul>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' id="bkmk_4">Child node 1</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' >Child node 2</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' id="bkmk_15">Child node 3</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' >Child node 4</li>
+                            </ul>
+                        </li>
+                        <li data-draggable="false">Root node 2
+                            <ul>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' id="bkmk_16">Child node 1</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' >Child node 2</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' id="bkmk_17">Child node 3</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' >Child node 4</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' id="bkmk_18">Child node 5</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' >Child node 6</li>
+                            </ul>
+                        </li>
+                        <li data-draggable="false">Root node 3
+                            <ul>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' id="bkmk_19">Child node 1</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' >Child node 2</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' id="bkmk_20">Child node 3</li>
+                                <li data-draggable="true" data-jstree='{ "type" : "bookmark" }' >Child node 4</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="panel panel-default">
+                    <table class="table table-condensed">
+                        <tr class="info">
+                            <th>Titre</th>
+                            <th>Catégorie</th>
+                            <th>Url</th>
+                            <th>Note</th>
+                            <th>Actions</th>
+                        </tr>
+
+                        {% for bookmark in bookmarks %}
+                            <tr class="bookmark-row" data-row-id="{{bookmark.id}}">
+                                <td>{{bookmark.title}}</td>
+                                <td id="bookmark-category-{{bookmark.id}}" class="bookmark-category">{{bookmark.category}}</td>
+                                <td>{{bookmark.url}}</td>
+                                <td>{{bookmark.mark}}/5</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-xs btn-success" href='{{path('bookmark_show', {'id': bookmark.id})}}'>Détail</a>
+                                        <a class="btn btn-xs btn-primary" href='{{path('bookmark_edit', {'id': bookmark.id})}}'>Editer</a>
+                                        <a class="btn btn-xs btn-danger" href='{{path('bookmark_delete', {'id': bookmark.id})}}'>Supprimer</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

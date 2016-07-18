@@ -17,3 +17,7 @@ bookmark_edit:
 bookmark_delete:
     path:     /delete/{id}
     defaults: { _controller: BookmarkBundle:Bookmark:delete }
+
+bookmark_edit_category:
+    path:     /edit/{id}/category
+    defaults: { _controller: BookmarkBundle:Bookmark:editCategory }

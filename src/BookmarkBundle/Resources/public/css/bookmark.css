@@ -1,0 +1,8 @@
+.root-categories {
+    font-weight: bold;
+    color: midnightblue;
+}
+
+#category_tree .jstree-icon{
+    color: midnightblue;
+}

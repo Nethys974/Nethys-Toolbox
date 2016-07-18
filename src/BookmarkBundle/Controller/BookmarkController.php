@@ -4,6 +4,7 @@ namespace BookmarkBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use BookmarkBundle\Entity\Bookmark;
 use BookmarkBundle\Form\BookmarkType;
 
@@ -100,5 +101,21 @@ class BookmarkController extends Controller
         return $this->render('BookmarkBundle:Bookmark:show.html.twig', array(
             'entity' => $bookmark
         ));
+    }
+    
+    public function editCategoryAction($id, Request $request)
+    {
+        $cat = trim($request->request->get('cat'));
+        
+        $bookmark = $this->getDoctrine()->getRepository('BookmarkBundle:Bookmark')->find($id);
+        $bookmark->setCategory($cat);
+        
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($bookmark);
+        $em->flush();
+        
+        var_dump($bookmark);
+
+        return new Response('Ok !');
     }
 }
